@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ქართული ანბანი — Georgian Alphabet Evolution</title>
+    <meta name="description" content="ქართული ანბანის ევოლუცია — ასომთავრული, ნუსხური და მხედრული. სამივე დამწერლობის ინტერაქტიული გამოკვლევა, ტექსტის კონვერტორი და ანბანური სათვალავი.">
+    <meta name="keywords" content="ქართული ანბანი, Georgian alphabet, ასომთავრული, ნუსხური, მხედრული, Georgian scripts, ქართული დამწერლობა, ანბანური სათვალავი">
+    <meta name="author" content="Shota Mtvarelishvili">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://mtvarelishvili.com/alphabet/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mtvarelishvili.com/alphabet/">
+    <meta property="og:title" content="ქართული ანბანი — Georgian Alphabet Evolution">
+    <meta property="og:description" content="ქართული ანბანის ევოლუცია — ასომთავრული, ნუსხური და მხედრული. სამივე დამწერლობის ინტერაქტიული გამოკვლევა.">
+    <meta property="og:image" content="https://mtvarelishvili.com/alphabet/assets/preview.png">
+    <meta property="og:locale" content="ka_GE">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ქართული ანბანი — Georgian Alphabet Evolution">
+    <meta name="twitter:description" content="ქართული ანბანის ევოლუცია — ასომთავრული, ნუსხური და მხედრული.">
+    <meta name="twitter:image" content="https://mtvarelishvili.com/alphabet/assets/preview.png">
+
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Noto+Sans+Georgian:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-text">ანბანი</div>
+        <div class="loading-bar"></div>
+    </div>
+
+    <!-- Particles -->
+    <div class="particles-container" id="particles"></div>
+
+    <!-- Header -->
+    <header>
+        <h1>Georgian Alphabet</h1>
+        <p class="subtitle">ქართული ანბანის ევოლუცია</p>
+        <div class="divider"></div>
+        <div class="era-legend" id="eraLegend">
+            <div class="era-item active" data-script="asomtavruli">
+                <span>ასომთავრული</span>
+                <span style="opacity:0.5">V ს.</span>
+            </div>
+            <div class="era-item" data-script="nuskhuri">
+                <span>ნუსხური</span>
+                <span style="opacity:0.5">VII-IX ს.</span>
+            </div>
+            <div class="era-item" data-script="mkhedruli">
+                <span>მხედრული</span>
+                <span style="opacity:0.5">X-XI ს.</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Grid -->
+    <main>
+        <div class="grid" id="letterGrid"></div>
+
+        <!-- Obsolete Letters Section -->
+        <div class="section-title ghost" id="obsoleteSection" style="display: none;">
+            <h2>მოძველებული ასოები</h2>
+        </div>
+        <div class="grid" id="obsoleteGrid"></div>
+    </main>
+
+    <!-- Text Converter -->
+    <section class="converter-section" id="converterSection">
+        <div class="converter-title">
+            <h2>ტექსტის კონვერტორი</h2>
+            <div class="converter-divider"></div>
+            <p class="converter-subtitle">ასომთავრული · ნუსხური · ანბანური სათვალავი</p>
+        </div>
+        <div class="converter-container">
+            <div class="converter-input-wrap">
+                <label for="converterInput">მხედრული ტექსტი</label>
+                <input type="text" id="converterInput" class="converter-input" placeholder="ჩაწერეთ ქართული ტექსტი..." autocomplete="off">
+            </div>
+            <div class="converter-outputs">
+                <div class="converter-output-block">
+                    <div class="converter-output-label">ასომთავრული</div>
+                    <div class="converter-output-text" id="outputAsomtavruli"></div>
+                    <div class="converter-output-century">V საუკუნე</div>
+                </div>
+                <div class="converter-output-block">
+                    <div class="converter-output-label">ნუსხური</div>
+                    <div class="converter-output-text" id="outputNuskhuri"></div>
+                    <div class="converter-output-century">IX საუკუნე</div>
+                </div>
+                <div class="converter-output-block">
+                    <div class="converter-output-label">რიცხვითი მნიშვნელობა</div>
+                    <div class="converter-output-text" id="outputNumerical"></div>
+                    <div class="converter-output-century">ანბანური სათვალავი</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="learn.html" class="footer-learn">სწავლა</a>
+        <p>Click any letter to explore its evolution</p>
+    </footer>
+
+    <!-- Modal -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="modal" id="modal">
+        <div class="modal-inner">
+            <button class="modal-close" id="modalClose"></button>
+
+            <div class="modal-header">
+                <div class="modal-number" id="modalNumber">01</div>
+                <div class="modal-title" id="modalTitle">ანი</div>
+                <div class="modal-obsolete-badge" id="obsoleteBadge" style="display: none;">მოძველებული</div>
+                <div class="modal-numerical" id="modalNumerical"></div>
+            </div>
+
+            <div class="letter-stage">
+                <div class="letter-particles" id="letterParticles"></div>
+
+                <!-- Word Illustrations (33 total) -->
+
+                <!-- 1. ალვა — Cypress tree -->
+                <div class="word-illustration" id="illust-ალვა">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:60;--delay:0s" d="M50 90 L50 35"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:40;--delay:0.2s" d="M50 60 Q38 50 35 40"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:40;--delay:0.3s" d="M50 55 Q62 45 65 35"/>
+                        <path class="s-gold" data-anim="sway" style="--delay:0.6s;--origin:50% 90%" d="M50 35 Q40 20 35 12 Q50 8 65 12 Q60 20 50 35"/>
+                    </svg>
+                </div>
+
+                <!-- 2. ბროლი — Crystal -->
+                <div class="word-illustration" id="illust-ბროლი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:120;--delay:0s" d="M50 15 L70 40 L60 85 L40 85 L30 40 Z"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:60;--delay:0.3s" d="M50 15 L40 45 M50 15 L60 45 M30 40 L60 45 M70 40 L40 45"/>
+                        <circle class="s-gold" data-anim="sparkle" style="--delay:0.7s" cx="50" cy="35" r="2"/>
+                        <circle class="s-gold-mid" data-anim="sparkle" style="--delay:1.0s" cx="38" cy="55" r="1.5"/>
+                        <circle class="s-gold-dim" data-anim="sparkle" style="--delay:1.3s" cx="60" cy="60" r="1.5"/>
+                    </svg>
+                </div>
+
+                <!-- 3. გული — Heart -->
+                <div class="word-illustration" id="illust-გული">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:160;--delay:0s" d="M50 82 Q20 60 15 40 Q12 25 25 20 Q38 17 50 32 Q62 17 75 20 Q88 25 85 40 Q80 60 50 82Z"/>
+                        <path class="s-gold-mid" data-anim="pulse" style="--delay:0.8s;--end-opacity:0.5" d="M50 72 Q30 55 27 42 Q25 32 33 28 Q42 25 50 38 Q58 25 67 28 Q75 32 73 42 Q70 55 50 72Z"/>
+                    </svg>
+                </div>
+
+                <!-- 4. დარი — Balance scales -->
+                <div class="word-illustration" id="illust-დარი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:80;--delay:0s" d="M50 15 L50 75"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:70;--delay:0.2s" d="M25 35 L75 35"/>
+                        <path class="s-gold-mid" data-anim="sway" style="--delay:0.5s;--origin:50% 35%" d="M20 35 L15 55 L35 55 L30 35"/>
+                        <path class="s-gold-mid" data-anim="sway" style="--delay:0.7s;--origin:50% 35%" d="M70 35 L65 55 L85 55 L80 35"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:30;--delay:0.1s" d="M40 75 L60 75"/>
+                    </svg>
+                </div>
+
+                <!-- 5. ელვა — Lightning -->
+                <div class="word-illustration" id="illust-ელვა">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="flash" style="--dash-len:120;--delay:0s;--dur:0.5s" d="M55 10 L40 42 L55 42 L35 90"/>
+                        <path class="s-gold-mid" data-anim="flash" style="--dash-len:60;--delay:0.15s;--dur:0.4s" d="M65 18 L55 38 L65 38 L50 65"/>
+                    </svg>
+                </div>
+
+                <!-- 6. ვეფხი — Tiger -->
+                <div class="word-illustration" id="illust-ვეფხი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:150;--delay:0.1s" d="M15 65 Q20 55 30 50 Q40 45 50 48 Q60 45 70 50 Q80 55 85 65"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:80;--delay:0.3s" d="M30 50 Q25 40 28 30 Q35 25 40 30 Q38 40 40 45"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:50;--delay:0.5s" d="M28 30 Q22 28 18 22 Q22 18 28 20 Q30 25 28 30"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:40;--delay:0.6s" d="M28 30 Q35 22 42 25 Q40 30 35 32"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:20;--delay:0.8s" d="M35 52 Q38 48 42 52"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:20;--delay:0.9s" d="M48 50 Q50 46 54 50"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:20;--delay:1.0s" d="M60 52 Q63 48 67 52"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:50;--delay:0.9s" d="M85 65 Q92 60 95 50 Q90 45 85 50"/>
+                    </svg>
+                </div>
+
+                <!-- 7. ზღვა — Ocean waves -->
+                <div class="word-illustration" id="illust-ზღვა">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:100;--delay:0s" d="M10 45 Q25 35 40 45 Q55 55 70 45 Q85 35 95 45"/>
+                        <path class="s-gold-mid" data-anim="wave" style="--delay:0.4s" d="M5 58 Q20 48 35 58 Q50 68 65 58 Q80 48 95 58"/>
+                        <path class="s-gold-dim" data-anim="wave" style="--delay:0.7s" d="M10 72 Q25 62 40 72 Q55 82 70 72 Q85 62 95 72"/>
+                    </svg>
+                </div>
+
+                <!-- 8. თვალი — Eye -->
+                <div class="word-illustration" id="illust-თვალი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:120;--delay:0s" d="M10 50 Q30 25 50 25 Q70 25 90 50 Q70 75 50 75 Q30 75 10 50Z"/>
+                        <circle class="s-gold-mid" data-anim="draw" style="--dash-len:60;--delay:0.4s" cx="50" cy="50" r="12"/>
+                        <circle class="s-gold" data-anim="pulse" style="--delay:0.7s;--dur:1.5s" cx="50" cy="50" r="5"/>
+                    </svg>
+                </div>
+
+                <!-- 9. ისარი — Arrow -->
+                <div class="word-illustration" id="illust-ისარი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:110;--delay:0s;--dur:0.5s" d="M15 75 L80 25"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:30;--delay:0.3s;--dur:0.3s" d="M80 25 L68 28 M80 25 L77 37"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:20;--delay:0.1s" d="M15 75 L22 68 M15 75 L24 77"/>
+                    </svg>
+                </div>
+
+                <!-- 10. კოცნა — Kiss -->
+                <div class="word-illustration" id="illust-კოცნა">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:100;--delay:0s" d="M20 48 Q30 35 50 40 Q70 35 80 48 Q70 52 50 48 Q30 52 20 48Z"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:100;--delay:0.3s" d="M20 52 Q30 65 50 60 Q70 65 80 52 Q70 48 50 55 Q30 48 20 52Z"/>
+                    </svg>
+                </div>
+
+                <!-- 11. ლომი — Lion -->
+                <div class="word-illustration" id="illust-ლომი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:120;--delay:0s" d="M50 25 Q30 20 25 35 Q20 50 30 60 Q40 70 50 65 Q60 70 70 60 Q80 50 75 35 Q70 20 50 25Z"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:40;--delay:0.3s" d="M35 30 Q25 15 20 25"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:40;--delay:0.4s" d="M65 30 Q75 15 80 25"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:30;--delay:0.5s" d="M28 38 Q15 35 18 48"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:30;--delay:0.6s" d="M72 38 Q85 35 82 48"/>
+                        <circle class="s-gold-dim" data-anim="draw" style="--dash-len:15;--delay:0.7s" cx="40" cy="42" r="3"/>
+                        <circle class="s-gold-dim" data-anim="draw" style="--dash-len:15;--delay:0.8s" cx="60" cy="42" r="3"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:15;--delay:0.9s" d="M46 52 Q50 56 54 52"/>
+                    </svg>
+                </div>
+
+                <!-- 12. მზე — Sun -->
+                <div class="word-illustration" id="illust-მზე">
+                    <svg viewBox="0 0 100 100">
+                        <circle class="s-gold" data-anim="draw" style="--dash-len:80;--delay:0s" cx="50" cy="50" r="15"/>
+                        <g data-anim="rotate" style="--dur:8s;--delay:0.5s;--end-opacity:0.8">
+                            <line class="s-gold-mid" x1="50" y1="10" x2="50" y2="25" style="stroke-width:1.2"/>
+                            <line class="s-gold-mid" x1="50" y1="75" x2="50" y2="90" style="stroke-width:1.2"/>
+                            <line class="s-gold-mid" x1="10" y1="50" x2="25" y2="50" style="stroke-width:1.2"/>
+                            <line class="s-gold-mid" x1="75" y1="50" x2="90" y2="50" style="stroke-width:1.2"/>
+                            <line class="s-gold-dim" x1="22" y1="22" x2="32" y2="32" style="stroke-width:1"/>
+                            <line class="s-gold-dim" x1="68" y1="68" x2="78" y2="78" style="stroke-width:1"/>
+                            <line class="s-gold-dim" x1="78" y1="22" x2="68" y2="32" style="stroke-width:1"/>
+                            <line class="s-gold-dim" x1="22" y1="78" x2="32" y2="68" style="stroke-width:1"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- 13. ნავი — Boat -->
+                <div class="word-illustration" id="illust-ნავი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:100;--delay:0s" d="M20 55 Q25 70 50 70 Q75 70 80 55 Z"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:50;--delay:0.3s" d="M50 55 L50 25"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:50;--delay:0.5s" d="M50 25 L65 40 L50 50"/>
+                        <path class="s-gold-mid" data-anim="wave" style="--delay:0.6s" d="M5 78 Q20 70 35 78 Q50 86 65 78 Q80 70 95 78"/>
+                    </svg>
+                </div>
+
+                <!-- 14. ომი — Battle -->
+                <div class="word-illustration" id="illust-ომი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:120;--delay:0s" d="M20 80 L65 25"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:120;--delay:0.2s" d="M80 80 L35 25"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:25;--delay:0.4s" d="M17 83 L23 77 M14 78 L24 83"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:25;--delay:0.5s" d="M83 83 L77 77 M86 78 L76 83"/>
+                        <circle class="s-gold" data-anim="sparkle" style="--delay:0.6s;--dur:0.8s" cx="50" cy="50" r="2"/>
+                        <circle class="s-gold-mid" data-anim="sparkle" style="--delay:0.8s;--dur:1s" cx="45" cy="45" r="1.5"/>
+                        <circle class="s-gold-dim" data-anim="sparkle" style="--delay:1s;--dur:1.2s" cx="55" cy="48" r="1"/>
+                    </svg>
+                </div>
+
+                <!-- 15. პირი — Face -->
+                <div class="word-illustration" id="illust-პირი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:180;--delay:0s" d="M55 15 Q35 15 30 30 Q28 40 35 45 Q30 48 32 55 Q35 62 40 65 Q38 72 42 78 Q48 85 58 82 Q65 78 62 70 Q68 60 65 50 Q70 40 65 30 Q60 18 55 15Z"/>
+                        <circle class="s-gold-dim" data-anim="draw" style="--dash-len:12;--delay:0.5s" cx="45" cy="38" r="2"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:15;--delay:0.6s" d="M42 55 Q48 58 52 55"/>
+                    </svg>
+                </div>
+
+                <!-- 16. ჟამი — Hourglass -->
+                <div class="word-illustration" id="illust-ჟამი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:160;--delay:0s" d="M25 15 L75 15 L55 50 L75 85 L25 85 L45 50 Z"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:30;--delay:0.3s" d="M35 20 L65 20"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:30;--delay:0.4s" d="M35 80 L65 80"/>
+                        <circle class="s-gold-dim" data-anim="fall" style="--delay:0.7s;--dur:1.2s" cx="48" cy="48" r="1"/>
+                        <circle class="s-gold-dim" data-anim="fall" style="--delay:0.9s;--dur:1.4s" cx="52" cy="46" r="1"/>
+                        <circle class="s-gold-dim" data-anim="fall" style="--delay:1.1s;--dur:1.3s" cx="50" cy="45" r="1.2"/>
+                    </svg>
+                </div>
+
+                <!-- 17. რხევა — Pendulum -->
+                <div class="word-illustration" id="illust-რხევა">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:30;--delay:0s" d="M35 15 L65 15"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:60;--delay:0.2s" d="M50 15 L50 65"/>
+                        <circle class="s-gold" data-anim="sway" style="--delay:0.5s;--origin:50% 15%;--dur:2.5s" cx="50" cy="72" r="8"/>
+                    </svg>
+                </div>
+
+                <!-- 18. სარკე — Mirror -->
+                <div class="word-illustration" id="illust-სარკე">
+                    <svg viewBox="0 0 100 100">
+                        <ellipse class="s-gold" data-anim="draw" style="--dash-len:160;--delay:0s" cx="50" cy="45" rx="25" ry="32"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:30;--delay:0.3s" d="M42 78 L50 90 L58 78"/>
+                        <circle class="s-gold" data-anim="sparkle" style="--delay:0.6s;--dur:1.6s" cx="42" cy="35" r="2"/>
+                        <circle class="s-gold-mid" data-anim="sparkle" style="--delay:0.9s;--dur:1.8s" cx="55" cy="42" r="1.5"/>
+                        <circle class="s-gold-dim" data-anim="sparkle" style="--delay:1.2s;--dur:2s" cx="48" cy="55" r="1"/>
+                    </svg>
+                </div>
+
+                <!-- 19. ტირილი — Teardrop -->
+                <div class="word-illustration" id="illust-ტირილი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:100;--delay:0s" d="M15 40 Q35 25 50 25 Q65 25 85 40 Q65 55 50 55 Q35 55 15 40Z"/>
+                        <circle class="s-gold-mid" data-anim="draw" style="--dash-len:40;--delay:0.3s" cx="50" cy="40" r="8"/>
+                        <circle class="s-gold" data-anim="fall" style="--delay:0.7s;--dur:1.5s" cx="40" cy="58" r="1.5"/>
+                        <circle class="s-gold-mid" data-anim="fall" style="--delay:1.0s;--dur:1.8s" cx="50" cy="60" r="2"/>
+                        <circle class="s-gold-dim" data-anim="fall" style="--delay:1.3s;--dur:1.6s" cx="58" cy="57" r="1.2"/>
+                    </svg>
+                </div>
+
+                <!-- 20. უცხო — Stranger -->
+                <div class="word-illustration" id="illust-უცხო">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:180;--delay:0.3s;--dur:1.2s;--end-opacity:0.7" d="M50 18 Q42 18 40 25 Q38 32 42 36 Q38 38 36 42 Q32 50 35 62 Q37 72 42 78 L42 88 L48 88 L48 78 L52 78 L52 88 L58 88 L58 78 Q63 72 65 62 Q68 50 64 42 Q62 38 58 36 Q62 32 60 25 Q58 18 50 18Z"/>
+                        <path class="s-gold-mid" data-anim="rotate" style="--dur:5s;--delay:0.8s;--end-opacity:0.5" d="M74 22 Q74 14 80 12 Q86 10 88 16 Q90 22 84 25 L84 30"/>
+                        <circle class="s-gold-mid" data-anim="rotate" style="--dur:5s;--delay:0.8s;--end-opacity:0.5" cx="84" cy="34" r="1.5"/>
+                        <ellipse class="s-gold" data-anim="sparkle" style="--delay:1s;--dur:2.5s;--end-opacity:1" cx="45" cy="28" rx="2.5" ry="1.5"/>
+                        <ellipse class="s-gold" data-anim="sparkle" style="--delay:1s;--dur:2.5s;--end-opacity:1" cx="55" cy="28" rx="2.5" ry="1.5"/>
+                        <ellipse class="s-gold-dim" data-anim="sparkle" style="--delay:2s;--dur:3s;--end-opacity:0.6" cx="18" cy="52" rx="2" ry="1"/>
+                        <ellipse class="s-gold-dim" data-anim="sparkle" style="--delay:2s;--dur:3s;--end-opacity:0.6" cx="26" cy="52" rx="2" ry="1"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:100;--delay:1.5s;--dur:1s;--end-opacity:0.25" d="M50 92 Q44 92 42 88 Q40 84 43 82 Q46 80 50 82 Q54 80 57 82 Q60 84 58 88 Q56 92 50 92Z"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:0s;--dur:3s" cx="30" cy="70" r="1.5"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:0.5s;--dur:3.5s" cx="70" cy="65" r="1"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:1s;--dur:4s" cx="50" cy="75" r="1.2"/>
+                    </svg>
+                </div>
+
+                <!-- 21. ფარი — Shield -->
+                <div class="word-illustration" id="illust-ფარი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:180;--delay:0s" d="M50 10 Q80 20 80 50 Q80 75 50 90 Q20 75 20 50 Q20 20 50 10Z"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:140;--delay:0.3s" d="M50 20 Q70 28 70 48 Q70 68 50 80 Q30 68 30 48 Q30 28 50 20Z"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:40;--delay:0.6s" d="M50 35 L55 48 L50 60 L45 48 Z"/>
+                    </svg>
+                </div>
+
+                <!-- 22. ქარი — Wind -->
+                <div class="word-illustration" id="illust-ქარი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:100;--delay:0s;--dur:0.6s" d="M10 35 Q40 25 60 35 Q80 45 90 30"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:80;--delay:0.2s;--dur:0.6s" d="M15 50 Q45 40 65 50 Q85 60 95 50"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:70;--delay:0.4s;--dur:0.6s" d="M10 65 Q35 58 55 65 Q75 72 85 62"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:0.6s;--dur:2.5s" cx="75" cy="28" r="1.5"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:0.9s;--dur:2s" cx="85" cy="45" r="1"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:1.2s;--dur:2.2s" cx="70" cy="60" r="1.2"/>
+                    </svg>
+                </div>
+
+                <!-- 23. ღამე — Night -->
+                <div class="word-illustration" id="illust-ღამე">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:120;--delay:0s" d="M55 20 Q35 25 25 45 Q20 65 35 78 Q50 88 68 80 Q55 82 45 70 Q38 55 45 38 Q50 25 55 20Z"/>
+                        <circle class="s-gold" data-anim="sparkle" style="--delay:0.5s;--dur:1.8s" cx="70" cy="25" r="2"/>
+                        <circle class="s-gold-mid" data-anim="sparkle" style="--delay:0.8s;--dur:2s" cx="82" cy="40" r="1.5"/>
+                        <circle class="s-gold-dim" data-anim="sparkle" style="--delay:1.1s;--dur:1.6s" cx="75" cy="58" r="1.2"/>
+                        <circle class="s-gold" data-anim="sparkle" style="--delay:1.4s;--dur:2.2s" cx="85" cy="22" r="1"/>
+                        <circle class="s-gold-mid" data-anim="sparkle" style="--delay:0.6s;--dur:1.4s" cx="65" cy="45" r="1"/>
+                    </svg>
+                </div>
+
+                <!-- 24. ყვავილი — Flower -->
+                <div class="word-illustration" id="illust-ყვავილი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:40;--delay:0s" d="M50 90 L50 55"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:50;--delay:0.2s" d="M50 45 Q42 30 50 20 Q58 30 50 45"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:50;--delay:0.35s" d="M50 45 Q36 38 30 48 Q40 52 50 45"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:50;--delay:0.5s" d="M50 45 Q64 38 70 48 Q60 52 50 45"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:50;--delay:0.65s" d="M50 45 Q38 50 35 60 Q45 58 50 45"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:50;--delay:0.8s" d="M50 45 Q62 50 65 60 Q55 58 50 45"/>
+                        <circle class="s-gold" data-anim="pulse" style="--delay:1s;--dur:1.5s" cx="50" cy="45" r="5"/>
+                    </svg>
+                </div>
+
+                <!-- 25. შუქი — Light -->
+                <div class="word-illustration" id="illust-შუქი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="flash" style="--dash-len:70;--delay:0s" d="M50 50 L50 10"/>
+                        <path class="s-gold" data-anim="flash" style="--dash-len:60;--delay:0.1s" d="M50 50 L80 20"/>
+                        <path class="s-gold-mid" data-anim="flash" style="--dash-len:60;--delay:0.15s" d="M50 50 L90 50"/>
+                        <path class="s-gold-mid" data-anim="flash" style="--dash-len:60;--delay:0.2s" d="M50 50 L20 20"/>
+                        <path class="s-gold-dim" data-anim="flash" style="--dash-len:60;--delay:0.25s" d="M50 50 L10 50"/>
+                        <circle class="s-gold" data-anim="pulse" style="--delay:0.4s;--dur:1.2s" cx="50" cy="50" r="4"/>
+                    </svg>
+                </div>
+
+                <!-- 26. ჩანგი — Harp -->
+                <div class="word-illustration" id="illust-ჩანგი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:150;--delay:0s" d="M30 85 L30 25 Q30 15 45 12 Q65 10 75 20 Q82 28 80 40"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:60;--delay:0.3s" d="M30 85 L80 40"/>
+                        <line class="s-gold-dim" data-anim="wave" style="--delay:0.5s;--dur:1.2s" x1="30" y1="35" x2="55" y2="42" style="stroke-width:0.8"/>
+                        <line class="s-gold-dim" data-anim="wave" style="--delay:0.6s;--dur:1.3s" x1="30" y1="45" x2="60" y2="50" style="stroke-width:0.8"/>
+                        <line class="s-gold-dim" data-anim="wave" style="--delay:0.7s;--dur:1.4s" x1="30" y1="55" x2="62" y2="56" style="stroke-width:0.8"/>
+                        <line class="s-gold-dim" data-anim="wave" style="--delay:0.8s;--dur:1.5s" x1="30" y1="65" x2="60" y2="62" style="stroke-width:0.8"/>
+                        <line class="s-gold-dim" data-anim="wave" style="--delay:0.9s;--dur:1.6s" x1="30" y1="75" x2="55" y2="70" style="stroke-width:0.8"/>
+                    </svg>
+                </div>
+
+                <!-- 27. ცეცხლი — Flame -->
+                <div class="word-illustration" id="illust-ცეცხლი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:160;--delay:0s" d="M50 10 Q65 30 68 45 Q70 60 60 72 Q55 80 50 85 Q45 80 40 72 Q30 60 32 45 Q35 30 50 10Z"/>
+                        <path class="s-gold-mid" data-anim="sway" style="--delay:0.4s;--origin:50% 85%;--dur:1.5s" d="M50 25 Q58 38 58 48 Q58 58 53 65 Q50 70 47 65 Q42 58 42 48 Q42 38 50 25Z"/>
+                        <path class="s-gold-dim" data-anim="sway" style="--delay:0.6s;--origin:50% 85%;--dur:1.2s" d="M50 40 Q54 48 54 55 Q52 62 50 65 Q48 62 46 55 Q46 48 50 40Z"/>
+                    </svg>
+                </div>
+
+                <!-- 28. ძოწი — Coral -->
+                <div class="word-illustration" id="illust-ძოწი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:60;--delay:0s" d="M40 85 L40 55 Q35 40 28 30"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:50;--delay:0.15s" d="M40 55 Q45 42 50 35"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:60;--delay:0.1s" d="M60 85 L60 50 Q65 38 72 28"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:40;--delay:0.25s" d="M60 50 Q55 40 52 32"/>
+                        <path class="s-gold" data-anim="sway" style="--delay:0.5s;--origin:40% 85%;--dur:2.5s" d="M28 30 Q22 22 25 15"/>
+                        <path class="s-gold-mid" data-anim="sway" style="--delay:0.6s;--origin:60% 85%;--dur:2.2s" d="M72 28 Q78 20 75 12"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:0.8s;--dur:2.5s" cx="35" cy="45" r="1.5"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:1.1s;--dur:2s" cx="65" cy="40" r="1.2"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:1.4s;--dur:2.8s" cx="50" cy="50" r="1"/>
+                    </svg>
+                </div>
+
+                <!-- 29. წყარო — Spring -->
+                <div class="word-illustration" id="illust-წყარო">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:60;--delay:0s" d="M40 25 Q55 20 55 30 Q55 40 40 35 Q25 30 30 20 Q35 12 50 15"/>
+                        <path class="s-gold" data-anim="draw" style="--dash-len:80;--delay:0.3s" d="M45 38 Q55 42 60 50 Q65 58 55 62"/>
+                        <path class="s-gold-mid" data-anim="wave" style="--delay:0.5s;--dur:1.5s" d="M30 62 Q45 55 55 62 Q65 70 80 62"/>
+                        <path class="s-gold-dim" data-anim="wave" style="--delay:0.7s;--dur:1.8s" d="M25 75 Q40 68 55 75 Q70 82 85 75"/>
+                    </svg>
+                </div>
+
+                <!-- 30. ჭექა — Thunder -->
+                <div class="word-illustration" id="illust-ჭექა">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="flash" style="--dash-len:130;--delay:0s;--dur:0.4s" d="M58 8 L38 42 L52 42 L30 92"/>
+                        <path class="s-gold-mid" data-anim="flash" style="--dash-len:80;--delay:0.1s;--dur:0.35s" d="M70 15 L55 40 L65 40 L48 70"/>
+                    </svg>
+                </div>
+
+                <!-- 31. ხმალი — Sword -->
+                <div class="word-illustration" id="illust-ხმალი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:130;--delay:0s;--dur:0.5s" d="M25 85 Q40 60 60 40 Q75 25 82 15"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:40;--delay:0.3s" d="M82 15 L88 18 L85 24"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:30;--delay:0.2s" d="M22 82 L28 88 M18 85 L25 78"/>
+                    </svg>
+                </div>
+
+                <!-- 32. ჯავარი — Jewel -->
+                <div class="word-illustration" id="illust-ჯავარი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:140;--delay:0s" d="M50 15 L72 35 L65 75 L35 75 L28 35 Z"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:80;--delay:0.3s" d="M28 35 L72 35 M50 15 L35 75 M50 15 L65 75 M28 35 L65 75 M72 35 L35 75"/>
+                        <circle class="s-gold" data-anim="sparkle" style="--delay:0.6s;--dur:1.2s" cx="50" cy="40" r="2.5"/>
+                        <circle class="s-gold-mid" data-anim="sparkle" style="--delay:0.9s;--dur:1.5s" cx="38" cy="55" r="1.5"/>
+                        <circle class="s-gold-dim" data-anim="sparkle" style="--delay:1.2s;--dur:1.8s" cx="62" cy="58" r="1.5"/>
+                        <g data-anim="rotate" style="--dur:6s;--delay:0.5s;--end-opacity:0.4">
+                            <circle class="s-gold-dim" cx="50" cy="10" r="1"/>
+                            <circle class="s-gold-dim" cx="50" cy="82" r="1"/>
+                        </g>
+                    </svg>
+                </div>
+
+                <!-- 33. ჰაერი — Air -->
+                <div class="word-illustration" id="illust-ჰაერი">
+                    <svg viewBox="0 0 100 100">
+                        <path class="s-gold" data-anim="draw" style="--dash-len:90;--delay:0s;--dur:0.6s" d="M10 40 Q30 28 50 38 Q70 48 90 35"/>
+                        <path class="s-gold-mid" data-anim="draw" style="--dash-len:80;--delay:0.15s;--dur:0.6s" d="M8 55 Q28 45 48 55 Q68 65 88 52"/>
+                        <path class="s-gold-dim" data-anim="draw" style="--dash-len:70;--delay:0.3s;--dur:0.6s" d="M12 70 Q32 60 52 70 Q72 80 88 68"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:0.5s;--dur:2.5s" cx="78" cy="30" r="1.5"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:0.8s;--dur:2s" cx="82" cy="48" r="1"/>
+                        <circle class="s-gold-dim" data-anim="float" style="--delay:1.1s;--dur:2.3s" cx="75" cy="62" r="1.2"/>
+                    </svg>
+                </div>
+
+                <span class="main-letter" id="mainLetter">ა</span>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-track"></div>
+                <div class="timeline-progress" id="timelineProgress"></div>
+
+                <div class="timeline-stage" data-stage="0">
+                    <span class="stage-letter" id="stage0Letter">Ⴀ</span>
+                    <div class="stage-dot"></div>
+                    <div class="stage-label">ასომთავრული</div>
+                    <div class="stage-century">V ს.</div>
+                </div>
+
+                <div class="timeline-stage" data-stage="1">
+                    <span class="stage-letter" id="stage1Letter">ⴀ</span>
+                    <div class="stage-dot"></div>
+                    <div class="stage-label">ნუსხური</div>
+                    <div class="stage-century">VII-IX ს.</div>
+                </div>
+
+                <div class="timeline-stage" data-stage="2">
+                    <span class="stage-letter" id="stage2Letter">ა</span>
+                    <div class="stage-dot"></div>
+                    <div class="stage-label">მხედრული</div>
+                    <div class="stage-century">X-XI ს.</div>
+                </div>
+            </div>
+
+            <div class="nav-arrows">
+                <button class="nav-arrow" id="prevBtn">
+                    <svg viewBox="0 0 24 24"><polyline points="15,18 9,12 15,6"/></svg>
+                </button>
+                <button class="nav-arrow" id="nextBtn">
+                    <svg viewBox="0 0 24 24"><polyline points="9,6 15,12 9,18"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/converter.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#e8d5a3"/>
+      <stop offset="50%" stop-color="#c9a227"/>
+      <stop offset="100%" stop-color="#8b6914"/>
+    </linearGradient>
+    <radialGradient id="bg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#0f0f0f"/>
+      <stop offset="100%" stop-color="#000000"/>
+    </radialGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="url(#bg)"/>
+  <rect x="1.5" y="1.5" width="61" height="61" rx="12.5" fill="none" stroke="url(#g)" stroke-width="1.5" opacity="0.4"/>
+  <text x="32" y="48" text-anchor="middle" font-family="'Noto Sans Georgian', sans-serif" font-size="40" font-weight="600" fill="url(#g)">ა</text>
+</svg>

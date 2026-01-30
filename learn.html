@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>სწავლა — ქართული ანბანი</title>
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Noto+Sans+Georgian:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/learn.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <a href="index.html" class="nav-back">← ანბანი</a>
+        <span class="nav-title">სწავლა</span>
+    </nav>
+
+    <div class="container">
+        <!-- Script selector -->
+        <p class="section-label">დამწერლობა</p>
+        <div class="script-selector">
+            <button class="script-btn active" data-script="asomtavruli">ასომთავრული</button>
+            <button class="script-btn" data-script="nuskhuri">ნუსხური</button>
+        </div>
+
+        <!-- Group pills -->
+        <p class="section-label">ჯგუფი</p>
+        <div class="group-pills" id="groupPills"></div>
+
+        <!-- Mode selector -->
+        <p class="section-label">რეჟიმი</p>
+        <div class="mode-selector">
+            <button class="mode-btn active" data-mode="flashcard">ბარათები</button>
+            <button class="mode-btn" data-mode="quiz">ქვიზი</button>
+        </div>
+
+        <!-- Flashcard area -->
+        <div class="flashcard-area" id="flashcardArea">
+            <div class="flashcard-wrapper" id="flashcardWrapper">
+                <div class="flashcard" id="flashcard">
+                    <div class="flashcard-face flashcard-front">
+                        <span class="fc-letter" id="fcLetter"></span>
+                        <span class="fc-hint">შეეხე გადასაბრუნებლად</span>
+                    </div>
+                    <div class="flashcard-face flashcard-back">
+                        <span class="fc-mkhedruli" id="fcMkhedruli"></span>
+                        <span class="fc-name" id="fcName"></span>
+                        <span class="fc-example" id="fcExample"></span>
+                        <span class="fc-meaning" id="fcMeaning"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="fc-nav">
+                <button class="fc-arrow" id="fcPrev">‹</button>
+                <span class="fc-counter" id="fcCounter">1 / 5</span>
+                <button class="fc-arrow" id="fcNext">›</button>
+            </div>
+            <div class="fc-dots" id="fcDots"></div>
+            <button class="start-quiz-btn" id="startQuizBtn">ქვიზის დაწყება</button>
+        </div>
+
+        <!-- Quiz area -->
+        <div class="quiz-area hidden" id="quizArea">
+            <div class="quiz-progress" id="quizProgress">1 / 5</div>
+            <div class="quiz-score" id="quizScore">ქულა: 0 / 0 &nbsp; <span class="streak" id="quizStreak"></span></div>
+            <div class="quiz-letter" id="quizLetter"></div>
+            <div class="quiz-options" id="quizOptions"></div>
+        </div>
+    </div>
+
+    <!-- Quiz summary overlay -->
+    <div class="quiz-summary hidden" id="quizSummary">
+        <div class="summary-card">
+            <div class="summary-stars" id="summaryStars"></div>
+            <div class="summary-message" id="summaryMessage"></div>
+            <div class="summary-score" id="summaryScore"></div>
+            <div class="summary-actions">
+                <button class="summary-btn primary" id="summaryRetry">თავიდან</button>
+                <button class="summary-btn" id="summaryNext">შემდეგი ჯგუფი</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/learn.js"></script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Design Tokens */
+:root {
+    --gold-primary: #c9a227;
+    --gold-secondary: #a78419;
+    --gold-dark: #8b6914;
+    --gold-light: #e8d5a3;
+    --black-deep: #000000;
+    --black-soft: #0a0a0a;
+    --black-card: #0f0f0f;
+    --black-border: #1a1a1a;
+    --black-lighter: #252525;
+    --ghost-color: #4a3f6b;
+    --ghost-glow: #6b5b95;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Scrollbar */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--gold-dark) var(--black-soft);
+}
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: var(--black-soft);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--gold-dark);
+    border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--gold-primary);
+}
+
+/* Custom Cursor */
+html {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16'%3E%3Ccircle cx='8' cy='8' r='4' fill='%23c9a227' opacity='0.9'/%3E%3Ccircle cx='8' cy='8' r='6' stroke='%23c9a227' stroke-width='1' fill='none' opacity='0.4'/%3E%3C/svg%3E") 8 8, default;
+    scroll-behavior: smooth;
+}
+
+/* Text Selection */
+::selection {
+    background: var(--gold-primary);
+    color: var(--black-deep);
+}
+
+/* Focus Outline */
+:focus-visible {
+    outline: 2px solid var(--gold-primary);
+    outline-offset: 2px;
+}
+
+/* Grain Texture */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.03;
+    pointer-events: none;
+    z-index: 10000;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Pointer Cursor (shared) */
+.pointer-cursor {
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20'%3E%3Ccircle cx='10' cy='10' r='5' fill='%23e8d5a3' opacity='0.9'/%3E%3Ccircle cx='10' cy='10' r='8' stroke='%23c9a227' stroke-width='1.5' fill='none' opacity='0.5'/%3E%3C/svg%3E") 10 10, pointer;
+}

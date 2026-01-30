@@ -1,0 +1,384 @@
+{
+  "metadata": {
+    "title": "Georgian Alphabet Data",
+    "description": "Complete Georgian alphabet with all three scripts",
+    "scripts": {
+      "asomtavruli": { "name": "ასომთავრული", "century": "V", "unicodeStart": "0x10A0" },
+      "nuskhuri": { "name": "ნუსხური", "century": "IX-XI", "unicodeStart": "0x2D00" },
+      "mkhedruli": { "name": "მხედრული", "century": "X-XI", "unicodeStart": "0x10D0" }
+    }
+  },
+  "alphabet": [
+    {
+      "number": 1,
+      "mkhedruli": "ა",
+      "asomtavruli": "Ⴀ",
+      "nuskhuri": "ⴀ",
+      "name": "ანი",
+      "transliteration": "a",
+      "exampleWord": "ალვა",
+      "wordMeaning": "cypress tree",
+      "numericalValue": 1
+    },
+    {
+      "number": 2,
+      "mkhedruli": "ბ",
+      "asomtavruli": "Ⴁ",
+      "nuskhuri": "ⴁ",
+      "name": "ბანი",
+      "transliteration": "b",
+      "exampleWord": "ბროლი",
+      "wordMeaning": "crystal",
+      "numericalValue": 2
+    },
+    {
+      "number": 3,
+      "mkhedruli": "გ",
+      "asomtavruli": "Ⴂ",
+      "nuskhuri": "ⴂ",
+      "name": "განი",
+      "transliteration": "g",
+      "exampleWord": "გული",
+      "wordMeaning": "heart",
+      "numericalValue": 3
+    },
+    {
+      "number": 4,
+      "mkhedruli": "დ",
+      "asomtavruli": "Ⴃ",
+      "nuskhuri": "ⴃ",
+      "name": "დონი",
+      "transliteration": "d",
+      "exampleWord": "დარი",
+      "wordMeaning": "equal/peer",
+      "numericalValue": 4
+    },
+    {
+      "number": 5,
+      "mkhedruli": "ე",
+      "asomtavruli": "Ⴄ",
+      "nuskhuri": "ⴄ",
+      "name": "ენი",
+      "transliteration": "e",
+      "exampleWord": "ელვა",
+      "wordMeaning": "lightning",
+      "numericalValue": 5
+    },
+    {
+      "number": 6,
+      "mkhedruli": "ვ",
+      "asomtavruli": "Ⴅ",
+      "nuskhuri": "ⴅ",
+      "name": "ვინი",
+      "transliteration": "v",
+      "exampleWord": "ვეფხი",
+      "wordMeaning": "tiger",
+      "numericalValue": 6
+    },
+    {
+      "number": 7,
+      "mkhedruli": "ზ",
+      "asomtavruli": "Ⴆ",
+      "nuskhuri": "ⴆ",
+      "name": "ზენი",
+      "transliteration": "z",
+      "exampleWord": "ზღვა",
+      "wordMeaning": "sea",
+      "numericalValue": 7
+    },
+    {
+      "number": 8,
+      "mkhedruli": "თ",
+      "asomtavruli": "Ⴇ",
+      "nuskhuri": "ⴇ",
+      "name": "თანი",
+      "transliteration": "t",
+      "exampleWord": "თვალი",
+      "wordMeaning": "eye",
+      "numericalValue": 8
+    },
+    {
+      "number": 9,
+      "mkhedruli": "ი",
+      "asomtavruli": "Ⴈ",
+      "nuskhuri": "ⴈ",
+      "name": "ინი",
+      "transliteration": "i",
+      "exampleWord": "ისარი",
+      "wordMeaning": "arrow",
+      "numericalValue": 9
+    },
+    {
+      "number": 10,
+      "mkhedruli": "კ",
+      "asomtavruli": "Ⴉ",
+      "nuskhuri": "ⴉ",
+      "name": "კანი",
+      "transliteration": "k'",
+      "exampleWord": "კოცნა",
+      "wordMeaning": "kiss",
+      "numericalValue": 10
+    },
+    {
+      "number": 11,
+      "mkhedruli": "ლ",
+      "asomtavruli": "Ⴊ",
+      "nuskhuri": "ⴊ",
+      "name": "ლასი",
+      "transliteration": "l",
+      "exampleWord": "ლომი",
+      "wordMeaning": "lion",
+      "numericalValue": 20
+    },
+    {
+      "number": 12,
+      "mkhedruli": "მ",
+      "asomtavruli": "Ⴋ",
+      "nuskhuri": "ⴋ",
+      "name": "მანი",
+      "transliteration": "m",
+      "exampleWord": "მზე",
+      "wordMeaning": "sun",
+      "numericalValue": 30
+    },
+    {
+      "number": 13,
+      "mkhedruli": "ნ",
+      "asomtavruli": "Ⴌ",
+      "nuskhuri": "ⴌ",
+      "name": "ნარი",
+      "transliteration": "n",
+      "exampleWord": "ნავი",
+      "wordMeaning": "boat",
+      "numericalValue": 40
+    },
+    {
+      "number": 14,
+      "mkhedruli": "ო",
+      "asomtavruli": "Ⴍ",
+      "nuskhuri": "ⴍ",
+      "name": "ონი",
+      "transliteration": "o",
+      "exampleWord": "ომი",
+      "wordMeaning": "battle",
+      "numericalValue": 50
+    },
+    {
+      "number": 15,
+      "mkhedruli": "პ",
+      "asomtavruli": "Ⴎ",
+      "nuskhuri": "ⴎ",
+      "name": "პარი",
+      "transliteration": "p'",
+      "exampleWord": "პირი",
+      "wordMeaning": "face",
+      "numericalValue": 60
+    },
+    {
+      "number": 16,
+      "mkhedruli": "ჟ",
+      "asomtavruli": "Ⴏ",
+      "nuskhuri": "ⴏ",
+      "name": "ჟანი",
+      "transliteration": "zh",
+      "exampleWord": "ჟამი",
+      "wordMeaning": "time/hour",
+      "numericalValue": 70
+    },
+    {
+      "number": 17,
+      "mkhedruli": "რ",
+      "asomtavruli": "Ⴐ",
+      "nuskhuri": "ⴐ",
+      "name": "რაე",
+      "transliteration": "r",
+      "exampleWord": "რხევა",
+      "wordMeaning": "swaying",
+      "numericalValue": 80
+    },
+    {
+      "number": 18,
+      "mkhedruli": "ს",
+      "asomtavruli": "Ⴑ",
+      "nuskhuri": "ⴑ",
+      "name": "სანი",
+      "transliteration": "s",
+      "exampleWord": "სარკე",
+      "wordMeaning": "mirror",
+      "numericalValue": 90
+    },
+    {
+      "number": 19,
+      "mkhedruli": "ტ",
+      "asomtavruli": "Ⴒ",
+      "nuskhuri": "ⴒ",
+      "name": "ტარი",
+      "transliteration": "t'",
+      "exampleWord": "ტირილი",
+      "wordMeaning": "weeping",
+      "numericalValue": 100
+    },
+    {
+      "number": 20,
+      "mkhedruli": "უ",
+      "asomtavruli": "Ⴓ",
+      "nuskhuri": "ⴓ",
+      "name": "უნი",
+      "transliteration": "u",
+      "exampleWord": "უცხო",
+      "wordMeaning": "stranger, alien",
+      "numericalValue": 200
+    },
+    {
+      "number": 21,
+      "mkhedruli": "ფ",
+      "asomtavruli": "Ⴔ",
+      "nuskhuri": "ⴔ",
+      "name": "ფარი",
+      "transliteration": "p",
+      "exampleWord": "ფარი",
+      "wordMeaning": "shield",
+      "numericalValue": 300
+    },
+    {
+      "number": 22,
+      "mkhedruli": "ქ",
+      "asomtavruli": "Ⴕ",
+      "nuskhuri": "ⴕ",
+      "name": "ქანი",
+      "transliteration": "k",
+      "exampleWord": "ქარი",
+      "wordMeaning": "wind",
+      "numericalValue": 400
+    },
+    {
+      "number": 23,
+      "mkhedruli": "ღ",
+      "asomtavruli": "Ⴖ",
+      "nuskhuri": "ⴖ",
+      "name": "ღანი",
+      "transliteration": "gh",
+      "exampleWord": "ღამე",
+      "wordMeaning": "night",
+      "numericalValue": 500
+    },
+    {
+      "number": 24,
+      "mkhedruli": "ყ",
+      "asomtavruli": "Ⴗ",
+      "nuskhuri": "ⴗ",
+      "name": "ყარი",
+      "transliteration": "q'",
+      "exampleWord": "ყვავილი",
+      "wordMeaning": "flower",
+      "numericalValue": 600
+    },
+    {
+      "number": 25,
+      "mkhedruli": "შ",
+      "asomtavruli": "Ⴘ",
+      "nuskhuri": "ⴘ",
+      "name": "შინი",
+      "transliteration": "sh",
+      "exampleWord": "შუქი",
+      "wordMeaning": "light",
+      "numericalValue": 700
+    },
+    {
+      "number": 26,
+      "mkhedruli": "ჩ",
+      "asomtavruli": "Ⴙ",
+      "nuskhuri": "ⴙ",
+      "name": "ჩინი",
+      "transliteration": "ch",
+      "exampleWord": "ჩანგი",
+      "wordMeaning": "harp",
+      "numericalValue": 800
+    },
+    {
+      "number": 27,
+      "mkhedruli": "ც",
+      "asomtavruli": "Ⴚ",
+      "nuskhuri": "ⴚ",
+      "name": "ცანი",
+      "transliteration": "ts",
+      "exampleWord": "ცეცხლი",
+      "wordMeaning": "fire",
+      "numericalValue": 900
+    },
+    {
+      "number": 28,
+      "mkhedruli": "ძ",
+      "asomtavruli": "Ⴛ",
+      "nuskhuri": "ⴛ",
+      "name": "ძილი",
+      "transliteration": "dz",
+      "exampleWord": "ძოწი",
+      "wordMeaning": "coral",
+      "numericalValue": 1000
+    },
+    {
+      "number": 29,
+      "mkhedruli": "წ",
+      "asomtavruli": "Ⴜ",
+      "nuskhuri": "ⴜ",
+      "name": "წილი",
+      "transliteration": "ts'",
+      "exampleWord": "წყარო",
+      "wordMeaning": "spring/source",
+      "numericalValue": 2000
+    },
+    {
+      "number": 30,
+      "mkhedruli": "ჭ",
+      "asomtavruli": "Ⴝ",
+      "nuskhuri": "ⴝ",
+      "name": "ჭარი",
+      "transliteration": "ch'",
+      "exampleWord": "ჭექა",
+      "wordMeaning": "thunder",
+      "numericalValue": 3000
+    },
+    {
+      "number": 31,
+      "mkhedruli": "ხ",
+      "asomtavruli": "Ⴞ",
+      "nuskhuri": "ⴞ",
+      "name": "ხანი",
+      "transliteration": "kh",
+      "exampleWord": "ხმალი",
+      "wordMeaning": "sword",
+      "numericalValue": 4000
+    },
+    {
+      "number": 32,
+      "mkhedruli": "ჯ",
+      "asomtavruli": "Ⴟ",
+      "nuskhuri": "ⴟ",
+      "name": "ჯანი",
+      "transliteration": "j",
+      "exampleWord": "ჯავარი",
+      "wordMeaning": "jewel",
+      "numericalValue": 5000,
+      "uniqueFeature": "ერთადერთი ასო მწვავე კუთხეებით"
+    },
+    {
+      "number": 33,
+      "mkhedruli": "ჰ",
+      "asomtavruli": "Ⴠ",
+      "nuskhuri": "ⴠ",
+      "name": "ჰაე",
+      "transliteration": "h",
+      "exampleWord": "ჰაერი",
+      "wordMeaning": "air",
+      "numericalValue": 6000
+    }
+  ],
+  "obsoleteLetters": [
+    { "number": 34, "mkhedruli": "ჱ", "asomtavruli": "Ⴡ", "nuskhuri": "ⴡ", "name": "ჰე", "transliteration": "ē", "obsolete": true, "removedYear": 1879, "numericalValue": 7000 },
+    { "number": 35, "mkhedruli": "ჲ", "asomtavruli": "Ⴢ", "nuskhuri": "ⴢ", "name": "ჰიე", "transliteration": "y", "obsolete": true, "removedYear": 1879, "numericalValue": 8000 },
+    { "number": 36, "mkhedruli": "ჳ", "asomtavruli": "Ⴣ", "nuskhuri": "ⴣ", "name": "ვიე", "transliteration": "w", "obsolete": true, "removedYear": 1879, "numericalValue": 9000 },
+    { "number": 37, "mkhedruli": "ჴ", "asomtavruli": "Ⴤ", "nuskhuri": "ⴤ", "name": "ხარი", "transliteration": "q", "obsolete": true, "removedYear": 1879, "numericalValue": 10000 },
+    { "number": 38, "mkhedruli": "ჵ", "asomtavruli": "Ⴥ", "nuskhuri": "ⴥ", "name": "ჰოე", "transliteration": "ō", "obsolete": true, "removedYear": 1879, "numericalValue": 20000 }
+  ]
+}
