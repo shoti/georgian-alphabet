@@ -27,14 +27,20 @@ function convertWord(mkhedruliWord) {
   return { mkhedruli: mkhedruliWord, asomtavruli, nuskhuri };
 }
 
-function calculateNumericalValue(text, alphabetData) {
-  if (!alphabetData) return '';
-  const allLetterData = [...alphabetData.alphabet, ...alphabetData.obsoleteLetters];
+const GEORGIAN_NUMERAL_VALUES = {
+  'ა': 1, 'ბ': 2, 'გ': 3, 'დ': 4, 'ე': 5, 'ვ': 6, 'ზ': 7, 'თ': 9,
+  'ი': 10, 'კ': 20, 'ლ': 30, 'მ': 40, 'ნ': 50, 'ო': 70, 'პ': 80, 'ჟ': 90,
+  'რ': 100, 'ს': 200, 'ტ': 300, 'უ': 400, 'ფ': 500, 'ქ': 600, 'ღ': 700, 'ყ': 800, 'შ': 900,
+  'ჩ': 1000, 'ც': 2000, 'ძ': 3000, 'წ': 4000, 'ჭ': 5000, 'ხ': 6000, 'ჯ': 7000, 'ჰ': 8000,
+  'ჱ': 8, 'ჲ': 60, 'ჳ': 400, 'ჴ': 6000, 'ჵ': 10000
+};
+
+function calculateNumericalValue(text) {
   const values = [];
   for (const char of text) {
-    const found = allLetterData.find(l => l.mkhedruli === char);
-    if (found && found.numericalValue) {
-      values.push(found.numericalValue);
+    const val = GEORGIAN_NUMERAL_VALUES[char];
+    if (val) {
+      values.push(val);
     }
   }
   if (values.length === 0) return '';

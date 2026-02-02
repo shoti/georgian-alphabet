@@ -95,7 +95,7 @@
       "transliteration": "t",
       "exampleWord": "თვალი",
       "wordMeaning": "eye",
-      "numericalValue": 8
+      "numericalValue": 9
     },
     {
       "number": 9,
@@ -106,7 +106,7 @@
       "transliteration": "i",
       "exampleWord": "ისარი",
       "wordMeaning": "arrow",
-      "numericalValue": 9
+      "numericalValue": 10
     },
     {
       "number": 10,
@@ -117,7 +117,7 @@
       "transliteration": "k'",
       "exampleWord": "კოცნა",
       "wordMeaning": "kiss",
-      "numericalValue": 10
+      "numericalValue": 20
     },
     {
       "number": 11,
@@ -128,7 +128,7 @@
       "transliteration": "l",
       "exampleWord": "ლომი",
       "wordMeaning": "lion",
-      "numericalValue": 20
+      "numericalValue": 30
     },
     {
       "number": 12,
@@ -139,7 +139,7 @@
       "transliteration": "m",
       "exampleWord": "მზე",
       "wordMeaning": "sun",
-      "numericalValue": 30
+      "numericalValue": 40
     },
     {
       "number": 13,
@@ -150,7 +150,7 @@
       "transliteration": "n",
       "exampleWord": "ნავი",
       "wordMeaning": "boat",
-      "numericalValue": 40
+      "numericalValue": 50
     },
     {
       "number": 14,
@@ -161,7 +161,7 @@
       "transliteration": "o",
       "exampleWord": "ომი",
       "wordMeaning": "battle",
-      "numericalValue": 50
+      "numericalValue": 70
     },
     {
       "number": 15,
@@ -172,7 +172,7 @@
       "transliteration": "p'",
       "exampleWord": "პირი",
       "wordMeaning": "face",
-      "numericalValue": 60
+      "numericalValue": 80
     },
     {
       "number": 16,
@@ -183,7 +183,7 @@
       "transliteration": "zh",
       "exampleWord": "ჟამი",
       "wordMeaning": "time/hour",
-      "numericalValue": 70
+      "numericalValue": 90
     },
     {
       "number": 17,
@@ -194,7 +194,7 @@
       "transliteration": "r",
       "exampleWord": "რხევა",
       "wordMeaning": "swaying",
-      "numericalValue": 80
+      "numericalValue": 100
     },
     {
       "number": 18,
@@ -205,7 +205,7 @@
       "transliteration": "s",
       "exampleWord": "სარკე",
       "wordMeaning": "mirror",
-      "numericalValue": 90
+      "numericalValue": 200
     },
     {
       "number": 19,
@@ -216,7 +216,7 @@
       "transliteration": "t'",
       "exampleWord": "ტირილი",
       "wordMeaning": "weeping",
-      "numericalValue": 100
+      "numericalValue": 300
     },
     {
       "number": 20,
@@ -227,7 +227,7 @@
       "transliteration": "u",
       "exampleWord": "უცხო",
       "wordMeaning": "stranger, alien",
-      "numericalValue": 200
+      "numericalValue": 400
     },
     {
       "number": 21,
@@ -238,7 +238,7 @@
       "transliteration": "p",
       "exampleWord": "ფარი",
       "wordMeaning": "shield",
-      "numericalValue": 300
+      "numericalValue": 500
     },
     {
       "number": 22,
@@ -249,7 +249,7 @@
       "transliteration": "k",
       "exampleWord": "ქარი",
       "wordMeaning": "wind",
-      "numericalValue": 400
+      "numericalValue": 600
     },
     {
       "number": 23,
@@ -260,7 +260,7 @@
       "transliteration": "gh",
       "exampleWord": "ღამე",
       "wordMeaning": "night",
-      "numericalValue": 500
+      "numericalValue": 700
     },
     {
       "number": 24,
@@ -271,7 +271,7 @@
       "transliteration": "q'",
       "exampleWord": "ყვავილი",
       "wordMeaning": "flower",
-      "numericalValue": 600
+      "numericalValue": 800
     },
     {
       "number": 25,
@@ -282,7 +282,7 @@
       "transliteration": "sh",
       "exampleWord": "შუქი",
       "wordMeaning": "light",
-      "numericalValue": 700
+      "numericalValue": 900
     },
     {
       "number": 26,
@@ -293,7 +293,7 @@
       "transliteration": "ch",
       "exampleWord": "ჩანგი",
       "wordMeaning": "harp",
-      "numericalValue": 800
+      "numericalValue": 1000
     },
     {
       "number": 27,
@@ -304,7 +304,7 @@
       "transliteration": "ts",
       "exampleWord": "ცეცხლი",
       "wordMeaning": "fire",
-      "numericalValue": 900
+      "numericalValue": 2000
     },
     {
       "number": 28,
@@ -315,7 +315,7 @@
       "transliteration": "dz",
       "exampleWord": "ძოწი",
       "wordMeaning": "coral",
-      "numericalValue": 1000
+      "numericalValue": 3000
     },
     {
       "number": 29,
@@ -326,7 +326,7 @@
       "transliteration": "ts'",
       "exampleWord": "წყარო",
       "wordMeaning": "spring/source",
-      "numericalValue": 2000
+      "numericalValue": 4000
     },
     {
       "number": 30,
@@ -337,7 +337,7 @@
       "transliteration": "ch'",
       "exampleWord": "ჭექა",
       "wordMeaning": "thunder",
-      "numericalValue": 3000
+      "numericalValue": 5000
     },
     {
       "number": 31,
@@ -348,7 +348,7 @@
       "transliteration": "kh",
       "exampleWord": "ხმალი",
       "wordMeaning": "sword",
-      "numericalValue": 4000
+      "numericalValue": 6000
     },
     {
       "number": 32,
@@ -359,7 +359,7 @@
       "transliteration": "j",
       "exampleWord": "ჯავარი",
       "wordMeaning": "jewel",
-      "numericalValue": 5000,
+      "numericalValue": 7000,
       "uniqueFeature": "ერთადერთი ასო მწვავე კუთხეებით"
     },
     {
@@ -371,14 +371,14 @@
       "transliteration": "h",
       "exampleWord": "ჰაერი",
       "wordMeaning": "air",
-      "numericalValue": 6000
+      "numericalValue": 8000
     }
   ],
   "obsoleteLetters": [
-    { "number": 34, "mkhedruli": "ჱ", "asomtavruli": "Ⴡ", "nuskhuri": "ⴡ", "name": "ჰე", "transliteration": "ē", "obsolete": true, "removedYear": 1879, "numericalValue": 7000 },
-    { "number": 35, "mkhedruli": "ჲ", "asomtavruli": "Ⴢ", "nuskhuri": "ⴢ", "name": "ჰიე", "transliteration": "y", "obsolete": true, "removedYear": 1879, "numericalValue": 8000 },
-    { "number": 36, "mkhedruli": "ჳ", "asomtavruli": "Ⴣ", "nuskhuri": "ⴣ", "name": "ვიე", "transliteration": "w", "obsolete": true, "removedYear": 1879, "numericalValue": 9000 },
-    { "number": 37, "mkhedruli": "ჴ", "asomtavruli": "Ⴤ", "nuskhuri": "ⴤ", "name": "ხარი", "transliteration": "q", "obsolete": true, "removedYear": 1879, "numericalValue": 10000 },
-    { "number": 38, "mkhedruli": "ჵ", "asomtavruli": "Ⴥ", "nuskhuri": "ⴥ", "name": "ჰოე", "transliteration": "ō", "obsolete": true, "removedYear": 1879, "numericalValue": 20000 }
+    { "number": 8, "mkhedruli": "ჱ", "asomtavruli": "Ⴡ", "nuskhuri": "ⴡ", "name": "ჰე", "transliteration": "ē", "obsolete": true, "removedYear": 1879, "numericalValue": 8 },
+    { "number": 15, "mkhedruli": "ჲ", "asomtavruli": "Ⴢ", "nuskhuri": "ⴢ", "name": "ჰიე", "transliteration": "y", "obsolete": true, "removedYear": 1879, "numericalValue": 60 },
+    { "number": 22, "mkhedruli": "ჳ", "asomtavruli": "Ⴣ", "nuskhuri": "ⴣ", "name": "ვიე", "transliteration": "w", "obsolete": true, "removedYear": 1879, "numericalValue": 400 },
+    { "number": 33, "mkhedruli": "ჴ", "asomtavruli": "Ⴤ", "nuskhuri": "ⴤ", "name": "ხარი", "transliteration": "q", "obsolete": true, "removedYear": 1879, "numericalValue": 6000 },
+    { "number": 36, "mkhedruli": "ჵ", "asomtavruli": "Ⴥ", "nuskhuri": "ⴥ", "name": "ჰოე", "transliteration": "ō", "obsolete": true, "removedYear": 1879, "numericalValue": 10000 }
   ]
 }

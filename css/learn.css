@@ -565,6 +565,29 @@ body {
     100% { opacity: 1; transform: translateX(0); }
 }
 
+/* Footer */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.footer-github {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--gold-dark);
+    text-decoration: none;
+    font-size: 0.7rem;
+    letter-spacing: 0.15em;
+    opacity: 0.4;
+    transition: opacity 0.3s var(--ease-out-quart), color 0.3s var(--ease-out-quart);
+}
+
+.footer-github:hover {
+    opacity: 0.8;
+    color: var(--gold-primary);
+}
+
 @media (max-width: 600px) {
     .flashcard-wrapper { width: 220px; height: 290px; }
     .flashcard-front .fc-letter { font-size: 4rem; }
